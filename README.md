@@ -6,6 +6,7 @@ create table reviews(
  user_id integer not null references users(id),
  rating integer not null check(rating>=1 and rating<=5),
  comment text ,
+ created_at timestamp not null default now(),
  unique(user_id, product_id)
  );
  
